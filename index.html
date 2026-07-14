@@ -3,6 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>AR Gamelan</title>
   <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/aframe-extras@7.x/dist/aframe-extras.min.js"></script>
@@ -10,7 +13,7 @@
 </head>
 <body style="margin: 0; overflow: hidden;">
 
-  <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+  <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;" vr-mode-ui="enabled: false">
     <a-assets>
       <audio id="musik-bg" src="audio.mp3" preload="auto"></audio>
     </a-assets>
@@ -32,7 +35,9 @@
     const musik = document.querySelector('#musik-bg');
 
     marker.addEventListener('markerFound', () => {
-      musik.play().catch(() => {}); // catch biar gak error kalau browser blokir autoplay
+      musik.play().catch((err) => {
+        console.log("Autoplay diblokir oleh browser sebelum ada interaksi user:", err);
+      });
     });
 
     marker.addEventListener('markerLost', () => {
