@@ -51,7 +51,7 @@
 
   <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;" vr-mode-ui="enabled: false" gesture-detector>
     <a-assets>
-      <audio id="musik-bg" src="audio.mp3" preload="auto"></audio>
+      <audio id="musik-bg" src="Audio.mp3" preload="auto"></audio>
     </a-assets>
 
     <a-marker preset="hiro" id="marker-utama" smooth="true" smoothCount="25" smoothTolerance="0.005"
@@ -69,12 +69,15 @@
 
   <!-- Teks Berjalan -->
   <div class="marquee-container" id="marquee">
-    <span class="marquee-text">Alat Musik Tradisional Sumatra Selatan 
-      diwakili oleh perpaduan harmonis antara Gendang Melayu, yaitu instrumen ketuk silinder dari kayu dan kulit hewan 
-      yang berfungsi sebagai pengatur ritme tari, serta Kenong Basemah, yaitu gong logam kecil berpencu khas suku Pasemah 
-      yang dimainkan dengan cara dipukul untuk mengiringi ritual adat.
-      .</span>
-  </div>
+  <span class="marquee-text">
+    Alat Musik Tradisional Sumatera Selatan: 
+    Gendang Melayu (instrumen ketuk pengatur ritme), 
+    Kenong Basemah (gong logam kecil penegas nada), 
+    Gambus (alat musik petik dawai bernuansa religi), 
+    Terbangan (rebana tradisional pengiring selawat), 
+    dan Gong (instrumen logam besar penanda penutup irama).
+  </span>
+</div>
 
   <script>
     const marker = document.querySelector('#marker-utama');
